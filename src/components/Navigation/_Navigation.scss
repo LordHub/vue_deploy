@@ -1,4 +1,12 @@
-.Navigation {
+.navigation {
+    background-color: $color-primary-0;
+    height: 50px;
+    nav {
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
     // Vars
 
     // Support

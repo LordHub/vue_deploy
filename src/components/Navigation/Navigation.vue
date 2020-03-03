@@ -1,8 +1,9 @@
 <template>
   <div class="navigation">
-    <h2>Nav Bar</h2>
+    <h1>LorHub</h1>
     <nav>
-      <router-link to="/home">Home</router-link>
+      <router-link to="/">Home</router-link>
+      <router-link to="/about">About</router-link>
     </nav>
   </div>
 </template>
@@ -14,8 +15,5 @@
     };
 </script>
 <style lang="scss">
-  /*@import './scss/_variables.scss';*/
-  .navigation {
-    background-color: $color-primary-0;
-  }
+  @import '_Navigation.scss';
 </style>
