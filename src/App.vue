@@ -13,6 +13,7 @@
   import Navigation from "./components/Navigation/Navigation";
   import Footer from "./components/Footer/Footer"
   import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+  import Vue from "vue"
 
   // Install BootstrapVue
   Vue.use(BootstrapVue)
@@ -28,8 +29,8 @@ export default {
 <style lang="scss">
 @import 'scss/_variables.scss';
 // custom.scss
-/*@import 'node_modules/bootstrap/scss/bootstrap';*/
-/*@import 'node_modules/bootstrap-vue/src/index.scss';*/
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
