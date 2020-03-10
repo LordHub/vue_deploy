@@ -1,6 +1,7 @@
 <template>
   <b-navbar :type="themeKey" :variant="themeKey" class="navigation">
     <b-navbar-nav>
+      <profile-image circle="true" size="small"></profile-image>
       <b-nav-item to="/">Home</b-nav-item>
       <b-nav-item to="/about">About</b-nav-item>
 
@@ -23,8 +24,10 @@
 </template>
 
 <script>
+    import ProfileImage from "../ProfileImage/ProfileImage";
     export default {
-        props: {
+      components: {ProfileImage},
+      props: {
         },
       data() {
         return {

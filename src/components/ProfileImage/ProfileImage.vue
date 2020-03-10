@@ -1,7 +1,6 @@
 <template>
     <div class="ProfileImage">
-        <pre v-text="$attrs"/>
-      <img :src="lordHubImg" alt="Profile Image" :class="{round_image: circle}">
+      <img :src="lordHubImg" alt="Profile Image" :class="classObject">
     </div>
 </template>
 
@@ -9,9 +8,17 @@
 export default {
   props: {
     circle: Boolean,
-    url: {
-      type: String,
-    }
+    size: String,
+    url: String,
+
+  },
+  computed: {
+    classObject: function () {
+      return {
+        round_image: this.circle,
+        [this.size]:this.size
+      }
+    },
   },
   data: function() {
       return {
