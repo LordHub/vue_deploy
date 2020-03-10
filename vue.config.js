@@ -5,5 +5,5 @@ module.exports = {
         prependData: `@import "@/scss/_variables.scss";`
       }
     }
-  }
+  },
 };
