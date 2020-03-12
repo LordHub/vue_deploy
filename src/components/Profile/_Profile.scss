@@ -1,6 +1,13 @@
 .Profile {
   .info {
     padding: 20px 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    .description {
+      padding: 20px;
+    }
   }
     // Vars
 

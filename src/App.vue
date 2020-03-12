@@ -1,9 +1,6 @@
 <template>
   <div id="app">
     <Navigation></Navigation>
-    <img src="./assets/logo.png">
-    <router-link :to="{ name: 'HelloWorld' }">Home</router-link>
-    <router-link to="/about">About</router-link>
     <router-view></router-view>
     <Footer></Footer>
   </div>
