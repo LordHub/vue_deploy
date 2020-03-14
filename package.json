@@ -35,7 +35,8 @@
     "webpack": "^4.41.6",
     "webpack-dev-server": "^3.10.3",
     "vue-instagram": "^3.0.0",
-    "vue-instagram-feed": "^2.1.0"
+    "vue-instagram-feed": "^2.1.0",
+    "codyhouse-framework": "^2.5.2"
   },
   "eslintConfig": {
     "root": true,

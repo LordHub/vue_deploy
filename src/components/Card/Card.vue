@@ -4,7 +4,7 @@
         <b-card-text>
           With supporting text below as a natural lead-in to additional content.
         </b-card-text>
-        <b-button href="#" variant="primary">Go somewhere</b-button>
+        <b-button :to=goTo variant="primary">Go to {{buttonText}}</b-button>
       </b-card>
     </div>
 </template>
@@ -13,7 +13,9 @@
     export default {
         props: {
           title: String,
-          subtitle: String
+          subtitle: String,
+          goTo: String,
+          buttonText: String
         },
     };
 </script>

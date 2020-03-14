@@ -5,11 +5,11 @@
           <main>
             <section>
               <div class="content">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/256492/_mLIxaKY_400x400.jpg" alt="Profile Image">
+                <profile-image :circle=true :size="small"></profile-image>
 
                 <aside>
-                  <h1>Riccardo Cavallo</h1>
-                  <p>Hi, I'm Riccardo Cavallo and I'm a Graphic and Visual Designer.</p>
+                  <h1>Andrés Paúl Muñoz</h1>
+                  <p>Hi, I'm Andrés Paúl Muñoz and I'm a Front End Developer.</p>
                 </aside>
 
                 <button @click="contactMe" id="contact_me">
@@ -70,8 +70,10 @@
 </template>
 
 <script>
+    import ProfileImage from "../ProfileImage/ProfileImage";
     export default {
-        props: {
+      components: {ProfileImage},
+      props: {
         },
       methods: {
           contactMe () {

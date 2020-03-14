@@ -9,7 +9,7 @@
         </div>
       </div>
       <div class="content">
-        <card class="col-md-6" title="Timeline"></card>
+        <card class="col-md-6" title="Timeline" button-text="Timeline" go-to="/timeline"></card>
           <vue-instagram :token="token" :count="5" :tags="['redminote9pro']" mediaType="image">
               <template v-slot:loading="props">
                   <h1 v-if="props.loading" class="fancy-loading">Loading, please wait...</h1>
