@@ -10,33 +10,17 @@
       </div>
       <div class="content">
         <card class="col-md-6" title="Timeline"></card>
-        <vue-instagram :token="token" :count="9">
-          <template v-slot="{ posts, errorMsg, fetchMorePosts }">
-            <section>
-              <div>
-                <article v-for="post in posts" :key="post.id">
-                  <a :href="post.link" target="_blank" rel="noopener">
-                    <img :src="post.images.low_resolution.url" alt="instagram" />
-                  </a>
-                  <h2 v-if="post.caption">{{ post.caption.text }}</h2>
-                  <ul class="tags-list">
-<!--                    <li v-for="tag in post.tags">#{{ tag }}</li>-->
-                    <li>#</li>
-                  </ul>
-                </article>
-                <pre v-if="errorMsg">{{ errorMsg }}</pre>
-              </div>
-              <div class="text-center">
-                <button
-                  class="text-xl border-b-4 border-primary leading-none"
-                  @click="fetchMorePosts"
-                >
-                  More
-                </button>
-              </div>
-            </section>
-          </template>
-        </vue-instagram>
+          <vue-instagram :token="token" :count="5" :tags="['redminote9pro']" mediaType="image">
+              <template v-slot:loading="props">
+                  <h1 v-if="props.loading" class="fancy-loading">Loading, please wait...</h1>
+              </template>
+              <template v-slot:feeds="props">
+                  <li class="fancy-list"> {{ props.feed.link }} </li>
+              </template>
+              <template v-slot:error="props">
+                  <div class="fancy-alert"> {{ props.error.error_message }} </div>
+              </template>
+          </vue-instagram>
       </div>
       <contact-me></contact-me>
     </div>
@@ -46,14 +30,14 @@
     import ProfileImage from "../ProfileImage/ProfileImage";
     import ContactMe from "../ContactMe/ContactMe";
     import Card from "../Card/Card";
-    import VueInstagram from 'vue-instagram-feed'
+    import VueInstagram from 'vue-instagram'
 
     export default {
       components: {Card, ContactMe, ProfileImage, VueInstagram},
       props: {
         },
       data: function() {
-return {
+        return {
         token: ""
       };
 },
