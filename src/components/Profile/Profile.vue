@@ -10,17 +10,7 @@
       </div>
       <div class="content">
         <card class="col-md-6" title="Timeline" button-text="Timeline" go-to="/timeline"></card>
-          <vue-instagram :token="token" :count="5" :tags="['redminote9pro']" mediaType="image">
-              <template v-slot:loading="props">
-                  <h1 v-if="props.loading" class="fancy-loading">Loading, please wait...</h1>
-              </template>
-              <template v-slot:feeds="props">
-                  <li class="fancy-list"> {{ props.feed.link }} </li>
-              </template>
-              <template v-slot:error="props">
-                  <div class="fancy-alert"> {{ props.error.error_message }} </div>
-              </template>
-          </vue-instagram>
+        <git-hub-repos></git-hub-repos>
       </div>
       <contact-me></contact-me>
     </div>
@@ -31,14 +21,15 @@
     import ContactMe from "../ContactMe/ContactMe";
     import Card from "../Card/Card";
     import VueInstagram from 'vue-instagram'
+    import GitHubRepos from "../GitHubRepos/GitHubRepos";
 
     export default {
-      components: {Card, ContactMe, ProfileImage, VueInstagram},
+      components: {GitHubRepos, Card, ContactMe, ProfileImage, VueInstagram},
       props: {
         },
       data: function() {
         return {
-        token: ""
+        token: "",
       };
 },
     };

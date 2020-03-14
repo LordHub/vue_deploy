@@ -2,6 +2,12 @@
   <div id="app">
     <Navigation></Navigation>
     <router-view></router-view>
+    <!--<loading-icon></loading-icon>-->
+    <fulfilling-square-spinner
+            :animation-duration="4000"
+            :size="50"
+            color="#ff1d5e"
+    />
     <Footer></Footer>
   </div>
 </template>
@@ -11,7 +17,7 @@
   import Footer from "./components/Footer/Footer"
   import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
   import Vue from "vue"
-
+  import { FulfillingSquareSpinner } from 'epic-spinners'
 
   // Install BootstrapVue
   Vue.use(BootstrapVue)
