@@ -9,7 +9,7 @@
         </div>
       </div>
       <div class="content">
-        <card class="col-md-6" title="Timeline" button-text="Timeline" go-to="/timeline"></card>
+        <card class="col-md-6" title="Timeline" button-text="Timeline" go-to="/timeline" name="timeline"></card>
         <git-hub-repos></git-hub-repos>
       </div>
       <contact-me></contact-me>
@@ -20,11 +20,11 @@
     import ProfileImage from "../ProfileImage/ProfileImage";
     import ContactMe from "../ContactMe/ContactMe";
     import Card from "../Card/Card";
-    import VueInstagram from 'vue-instagram'
+    // import VueInstagram from 'vue-instagram'
     import GitHubRepos from "../GitHubRepos/GitHubRepos";
 
     export default {
-      components: {GitHubRepos, Card, ContactMe, ProfileImage, VueInstagram},
+      components: {GitHubRepos, Card, ContactMe, ProfileImage},
       props: {
         },
       data: function() {

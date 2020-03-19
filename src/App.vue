@@ -2,12 +2,12 @@
   <div id="app">
     <Navigation></Navigation>
     <router-view></router-view>
-    <!--<loading-icon></loading-icon>-->
-    <fulfilling-square-spinner
-            :animation-duration="4000"
-            :size="50"
-            color="#ff1d5e"
-    />
+    <spring-spinner v-if="isLoading"
+      :animation-duration="4000"
+      :size="50"
+      color="#ff1d5e"
+      class="loading-spinner"
+    ></spring-spinner>
     <Footer></Footer>
   </div>
 </template>
@@ -17,7 +17,7 @@
   import Footer from "./components/Footer/Footer"
   import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
   import Vue from "vue"
-  import { FulfillingSquareSpinner } from 'epic-spinners'
+  import SpringSpinner from "epic-spinners/src/components/lib/SpringSpinner";
 
   // Install BootstrapVue
   Vue.use(BootstrapVue)
@@ -26,7 +26,12 @@
 
 export default {
   name: 'App',
-  components: {Navigation, Footer}
+  components: {SpringSpinner, Navigation, Footer},
+  computed: {
+    isLoading: function () {
+      return this.$store.getters.isLoading
+    }
+  }
 }
 </script>
 
@@ -44,5 +49,13 @@ export default {
 }
 body {
   margin: 0;
+}
+.loading-spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-2rem, -2rem);
+  z-index: 9999;
+  transition: opacity 0.3s ease-in-out;
 }
 </style>

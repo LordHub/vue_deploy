@@ -27,27 +27,30 @@
     import ProfileImage from "../ProfileImage/ProfileImage";
     export default {
       components: {ProfileImage},
-      props: {
-        },
+      computed: {
+        theme: function () {
+          return this.$store.getters.getThemeState
+        }
+      },
       data() {
         return {
-          theme: 0,
           themeImage: require('@/assets/idea.png'),
-          themeKey: 'light'
+          themeKey: 'primary'
         }
       },
       watch: {
         // whenever question changes, this function will run
         theme: function () {
-          this.themeKey  = this.theme ? 'light' : 'dark';
+          this.themeKey  = this.theme ? 'primary' : 'dark';
           this.themeImage = this.theme ? require('@/assets/idea.png') : require('@/assets/lightbulb.png');
           console.log('watch', this.theme)
         }
       },
       methods: {
           toggleTheme: function () {
-            this.theme = !this.theme;
-            console.log(this.theme);
+            // this.theme = !this.theme;
+            this.$store.commit('toggleTheme')
+            // console.log(this.theme);
           }
       }
     };
