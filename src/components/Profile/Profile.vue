@@ -1,7 +1,7 @@
 <template>
     <div class="Profile">
       <div class="info">
-        <profile-image :circle=true size="large"></profile-image>
+        <profile-image :circle="true" size="large"></profile-image>
         <div class="description">
           <h2>Andrés Paúl Muñoz</h2>
           <h3>Who am I?</h3>
@@ -12,19 +12,19 @@
         <card class="col-md-6" title="Timeline" button-text="Timeline" go-to="/timeline" name="timeline"></card>
         <git-hub-repos></git-hub-repos>
       </div>
-      <contact-me></contact-me>
+      <!--<contact-me></contact-me>-->
     </div>
 </template>
 
 <script>
     import ProfileImage from "../ProfileImage/ProfileImage";
-    import ContactMe from "../ContactMe/ContactMe";
+    // import ContactMe from "../ContactMe/ContactMe";
     import Card from "../Card/Card";
     // import VueInstagram from 'vue-instagram'
     import GitHubRepos from "../GitHubRepos/GitHubRepos";
 
     export default {
-      components: {GitHubRepos, Card, ContactMe, ProfileImage},
+      components: {GitHubRepos, Card, ProfileImage},
       props: {
         },
       data: function() {

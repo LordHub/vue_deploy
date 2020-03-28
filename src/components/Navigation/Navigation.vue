@@ -1,7 +1,7 @@
 <template>
   <b-navbar :type="themeKey" :variant="themeKey" class="navigation">
     <b-navbar-nav>
-      <profile-image circle="true" size="small"></profile-image>
+      <profile-image :circle="true" size="small"></profile-image>
       <b-nav-item to="/">Home</b-nav-item>
       <b-nav-item to="/about">About</b-nav-item>
 
@@ -30,27 +30,24 @@
       computed: {
         theme: function () {
           return this.$store.getters.getThemeState
+        },
+        themeKey: function() {
+          return this.$store.getters.getThemeKey
         }
       },
       data() {
         return {
-          themeImage: require('@/assets/idea.png'),
-          themeKey: 'primary'
+          themeImage: require('@/assets/idea.png')
         }
       },
       watch: {
-        // whenever question changes, this function will run
         theme: function () {
-          this.themeKey  = this.theme ? 'primary' : 'dark';
           this.themeImage = this.theme ? require('@/assets/idea.png') : require('@/assets/lightbulb.png');
-          console.log('watch', this.theme)
         }
       },
       methods: {
           toggleTheme: function () {
-            // this.theme = !this.theme;
             this.$store.commit('toggleTheme')
-            // console.log(this.theme);
           }
       }
     };

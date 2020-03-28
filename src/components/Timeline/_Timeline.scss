@@ -1,14 +1,74 @@
 .Timeline {
-    // Vars
+  margin-top: 5%
+}
+.circle {
+  padding: 13px 20px;
+  border-radius: 50%;
+  background-color: #ED8D8D;
+  color: #fff;
+  max-height: 50px;
+  z-index: 2;
+}
 
-    // Support
+.how-it-works.row .col-2 {
+  align-self: stretch;
+  &::after {
+    content: "";
+    position: absolute;
+    border-left: 3px solid #ED8D8D;
+    z-index: 1;
+  }
+  &.bottom::after {
+    height: 50%;
+    left: 50%;
+    top: 50%;
+  }
+  &.full::after {
+    height: 100%;
+    left: calc(50% - 3px);
+  }
+  &.top::after {
+    height: 50%;
+    left: 50%;
+    top: 0;
+  }
+}
 
-    // Module
-    & {
-        //
-    }
-
-    // Facets
-
-    // States
+.timeline {
+  div {
+    padding: 0;
+    height: 40px;
+  }
+  hr {
+    border-top: 3px solid #ED8D8D;
+    margin: 0;
+    top: 17px;
+    position: relative;
+  }
+  .col-2 {
+    display: flex;
+    overflow: hidden;
+  }
+  .corner {
+    border: 3px solid #ED8D8D;
+    width: 100%;
+    position: relative;
+    border-radius: 15px;
+  }
+  .top-right {
+    left: 50%;
+    top: -50%;
+  }
+  .left-bottom {
+    left: -50%;
+    top: calc(50% - 3px);
+  }
+  .top-left {
+    left: -50%;
+    top: -50%;
+  }
+  .right-bottom {
+    left: 50%;
+    top: calc(50% - 3px);
+  }
 }

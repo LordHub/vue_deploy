@@ -36,10 +36,12 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'scss/_variables.scss';
-// custom.scss
-@import 'node_modules/bootstrap/scss/bootstrap';
-@import 'node_modules/bootstrap-vue/src/index.scss';
+  // custom.scss
+  @import 'node_modules/bootstrap/scss/bootstrap';
+  @import 'node_modules/bootstrap-vue/src/index.scss';
+  @import 'scss/_variables.scss';
+  @import 'scss/_overrides.scss';
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -49,6 +51,9 @@ export default {
 }
 body {
   margin: 0;
+}
+html{
+  height: 100%;
 }
 .loading-spinner {
   position: fixed;

@@ -5,8 +5,7 @@
           <main>
             <section>
               <div class="content">
-                <profile-image :circle=true :size="small"></profile-image>
-
+                <profile-image :circle=true size="small"></profile-image>
                 <aside>
                   <h1>Andrés Paúl Muñoz</h1>
                   <p>Hi, I'm Andrés Paúl Muñoz and I'm a Front End Developer.</p>
@@ -81,6 +80,10 @@
               $('.title').toggleClass('active');
               $('nav').toggleClass('active');
           }
+      },
+      data() {
+        return {
+        }
       }
     };
 </script>

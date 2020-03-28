@@ -1,14 +1,10 @@
 <template>
     <div class="Card col-md-6 githubrepos">
-        <b-card bg-variant="dark" text-variant="white" :title=title>
-            <div v-for="respository in repositories.slice(0, 5)" :key="respository.id" class="repositories">
+        <b-card :bg-variant="themeKey" :title=title>
+            <div v-for="repository in repositories.slice(0, 5)" :key="repository.id" class="repositories col-md-6 col-xs-12">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" >
-                {{ respository.name }}
+                <a :href="repository.svn_url" target="_blank">{{ repository.name }}</a>
             </div>
-            <b-card-text>
-                With supporting text below as a natural lead-in to additional content.
-            </b-card-text>
-            <b-button :to=goTo variant="primary">Go to {{buttonText}}</b-button>
         </b-card>
     </div>
 </template>
@@ -30,6 +26,11 @@
                     console.log(response['data'])
                     this.repositories = response['data'];
                 })
+        },
+        computed: {
+            themeKey: function () {
+                return this.$store.getters.getThemeKey;
+            }
         }
     }
 </script>

@@ -1,0 +1,14 @@
+// Override bootstrap buttons
+.btn-dark {
+  background-color: $color-primary-0;
+}
+.btn-primary {
+  background-color: $dark; // TODO change
+}
+// Html
+a {
+  color: white;
+}
+h4 {
+  color: white;
+}
